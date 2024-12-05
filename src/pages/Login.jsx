@@ -19,7 +19,12 @@ const Login = () => {
         console.log(email, password);
         signInUser(email, password)
         .then(result =>{
-            console.log(result);
+            Swal.fire({
+                title: 'Success!',
+                text: 'Successfully Login user',
+                icon: 'success',
+                confirmButtonText: 'OK'
+              })
         })
         .catch(error =>{
             Swal.fire({
