@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const Navbar = () => {
-    
+    const { user } = useContext(AuthContext);
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
@@ -44,8 +44,17 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link to="/login" className="btn">Login</Link>
-                <Link to="/register" className="btn">Register</Link>
+                {
+                    user ? <div className="flex items-center gap-2">
+                     <div className="tooltip" data-tip={user.displayName}>
+                     <img src={user.photoURL} className="w-10 h-10 rounded-full object-cover" alt="" />
+                    </div>   
+                    <button className="btn">Logout</button></div> 
+                    : <div>
+                    <Link to="/login" className="btn">Login</Link>
+                    <Link to="/register" className="btn">Register</Link>
+                    </div>
+                }
             </div>
         </div>
     );
