@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
 
@@ -15,10 +16,28 @@ const Register = () => {
         const email = form.email.value;
         const photo = form.photo.value;
         const password = form.password.value;
-        console.log(name, email, photo, password);
+
+        const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if(!regex.test(password)){
+            Swal.fire({
+                title: 'Error!',
+                text: "Password must be at least 6 characters, contain at least one uppercase letter, and at least one lowercase letter.",
+                icon: 'error',
+                confirmButtonText: 'OK'
+              })
+            return;
+        }
+
+
         createUser(email, password)
         .then(result =>{
             console.log(result.user);
+            Swal.fire({
+                title: 'Success!',
+                text: 'Successfully create user',
+                icon: 'success',
+                confirmButtonText: 'OK'
+              })
         })
         .catch(error =>{
             console.log(error.message);
