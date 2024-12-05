@@ -42,7 +42,7 @@ const Navbar = () => {
                         <Link to='/'><li><a>Home</a></li></Link>
                         <Link to='/allReview'><li><a>All Reviews</a></li></Link>
                         <Link to='/addReview'><li><a>Add Review</a></li></Link>
-                        <Link to='/myReview'><li><a>My Reviews</a></li></Link>
+                        <Link to='/myReviews'><li><a>My Reviews</a></li></Link>
                         <Link to='/watchList'><li><a>Game WatchList</a></li></Link>
                     </ul>
                 </div>
@@ -53,15 +53,15 @@ const Navbar = () => {
                     <Link to='/'><li><a>Home</a></li></Link>
                     <Link to='/allReview'><li><a>All Reviews</a></li></Link>
                     <Link to='/addReview'><li><a>Add Review</a></li></Link>
-                    <Link to='/myReview'><li><a>My Reviews</a></li></Link>
+                    <Link to='/myReviews'><li><a>My Reviews</a></li></Link>
                     <Link to='/watchList'><li><a>Game WatchList</a></li></Link>
                 </ul>
             </div>
             <div className="navbar-end">
                 {
                     user ? <div className="flex items-center gap-2">
-                     <div className="tooltip" data-tip={user.displayName}>
-                     <img src={user.photoURL} className="w-10 h-10 rounded-full object-cover" alt="" />
+                     <div className="tooltip" data-tip={user?.displayName}>
+                     <img src={user?.photoURL} className="w-10 h-10 rounded-full object-cover" alt="" />
                     </div>   
                     <button onClick={handleSignOut} className="btn">Logout</button></div> 
                     : <div>
