@@ -1,6 +1,6 @@
 import { FcGoogle } from "react-icons/fc";
 import Navbar from "../components/Navbar/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
@@ -10,6 +10,7 @@ import Swal from "sweetalert2";
 const Login = () => {
     const {signInUser, googleLogin} = useContext(AuthContext);
     const provider = new GoogleAuthProvider();
+    const navigate = useNavigate();
 
     const handleSignIn = (e)=>{
         e.preventDefault();
@@ -25,6 +26,7 @@ const Login = () => {
                 icon: 'success',
                 confirmButtonText: 'OK'
               })
+            navigate('/');
         })
         .catch(error =>{
             Swal.fire({

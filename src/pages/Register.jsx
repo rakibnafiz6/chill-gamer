@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const Register = () => {
 
     const {createUser, updateUserProfile} = useContext(AuthContext);
-
+    const navigate = useNavigate();
 
     const handleRegister = (e)=>{
         e.preventDefault();
@@ -31,7 +31,6 @@ const Register = () => {
 
         createUser(email, password)
         .then(result =>{
-            console.log(result.user);
             Swal.fire({
                 title: 'Success!',
                 text: 'Successfully create user',
@@ -51,9 +50,15 @@ const Register = () => {
             .catch(error =>{
                 console.log(error.message);
             })
+        navigate('/');
         })
         .catch(error =>{
-            console.log(error.message);
+            Swal.fire({
+                title: 'Error!',
+                text: error.message,
+                icon: 'error',
+                confirmButtonText: 'OK'
+              })
         })
     }
 

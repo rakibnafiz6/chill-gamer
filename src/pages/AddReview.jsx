@@ -1,9 +1,12 @@
 import Swal from 'sweetalert2';
 import Navbar from '../components/Navbar/Navbar';
+import { useContext } from 'react';
+import { AuthContext } from '../providers/AuthProvider';
 
 const AddReview = () => {
+    const { user } = useContext(AuthContext);
 
-    const handleAddReview = (e)=>{
+    const handleAddReview = (e) => {
         e.preventDefault();
         const form = e.target;
         const photo = form.photo.value;
@@ -17,46 +20,47 @@ const AddReview = () => {
         const addInfo = {
             photo, name, description, rating, year, genres, userName, email
         }
+        
 
-        if(rating > 10){
+        if (rating > 10) {
             Swal.fire({
                 title: 'Error!',
                 text: 'Rating must be (1-10)',
                 icon: 'error',
                 confirmButtonText: 'OK'
-              })
+            })
             return;
         }
-        if(year < 2021 || year > 2024){
+        if (year < 2021 || year > 2024) {
             Swal.fire({
                 title: 'Error!',
                 text: 'Publishing year should be (2021-2024)',
                 icon: 'error',
                 confirmButtonText: 'OK'
-              })
+            })
             return;
         }
 
         fetch('http://localhost:5000/gamers', {
             method: 'POST',
             headers: {
-            'content-type': 'application/json'
+                'content-type': 'application/json'
             },
             body: JSON.stringify(addInfo)
         })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data);
-        if(data.insertedId){
-            Swal.fire({
-                title: 'Success!',
-                text: 'Add New Gamer To DB',
-                icon: 'success',
-                confirmButtonText: 'OK'
-              })
-        }    
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Add New Gamer To DB',
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    })
+                }
 
-        })
+            })
 
     }
 
@@ -99,23 +103,38 @@ const AddReview = () => {
                         className="input input-bordered input-accent w-full" />
 
                     <select className='w-full input input-bordered input-accent'
-                    name='genres'>
+                        name='genres'>
                         <option value="Action">Action</option>
                         <option value="RPG">RPG</option>
                         <option value="Adventure">Adventure</option>
                     </select>
                 </div>
                 <div className='flex gap-3 mb-3'>
-                    <input
+                    {/* <input
                         type="text"
                         name='userName'
                         placeholder="user name"
-                        className="input input-bordered input-accent w-full" />
-                    <input
+                        className="input input-bordered input-accent w-full" /> */}
+                        <input
+                        type="text"
+                        name='userName'
+                        defaultValue={user.displayName}
+                        placeholder="user name"
+                        className="input input-bordered input-accent w-full"
+                        disabled />
+                    {/* <input
                         type="text"
                         name='email'
+                        defaultValue={user.email}
                         placeholder="user email"
-                        className="input input-bordered input-accent w-full" />
+                        className="input input-bordered input-accent w-full" /> */}
+                    <input
+                        type="email"
+                        name='email'
+                        defaultValue={user.email}
+                        placeholder="user email"
+                        className="input input-bordered input-accent w-full"
+                        disabled />
                 </div>
                 <button className='btn w-full bg-accent'>Submit</button>
             </form>

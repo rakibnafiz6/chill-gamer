@@ -40,7 +40,7 @@ const Navbar = () => {
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                         <Link to='/'><li><a>Home</a></li></Link>
-                        <Link to='/allReview'><li><a>All Reviews</a></li></Link>
+                        <Link to='/allReviews'><li><a>All Reviews</a></li></Link>
                         <Link to='/addReview'><li><a>Add Review</a></li></Link>
                         <Link to='/myReviews'><li><a>My Reviews</a></li></Link>
                         <Link to='/watchList'><li><a>Game WatchList</a></li></Link>
@@ -51,7 +51,7 @@ const Navbar = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <Link to='/'><li><a>Home</a></li></Link>
-                    <Link to='/allReview'><li><a>All Reviews</a></li></Link>
+                    <Link to='/allReviews'><li><a>All Reviews</a></li></Link>
                     <Link to='/addReview'><li><a>Add Review</a></li></Link>
                     <Link to='/myReviews'><li><a>My Reviews</a></li></Link>
                     <Link to='/watchList'><li><a>Game WatchList</a></li></Link>
