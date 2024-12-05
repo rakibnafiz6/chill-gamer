@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext);
+    const {createUser, updateUserProfile} = useContext(AuthContext);
 
 
     const handleRegister = (e)=>{
@@ -38,6 +38,19 @@ const Register = () => {
                 icon: 'success',
                 confirmButtonText: 'OK'
               })
+
+        const profile = {
+            displayName: name,
+            photoURL: photo
+
+        }
+            updateUserProfile(profile)
+            .then(()=>{
+                console.log('update profile')
+            })
+            .catch(error =>{
+                console.log(error.message);
+            })
         })
         .catch(error =>{
             console.log(error.message);

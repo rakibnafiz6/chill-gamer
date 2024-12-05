@@ -6,10 +6,10 @@ import { AuthContext } from "../providers/AuthProvider";
 import { GoogleAuthProvider } from "firebase/auth";
 import Swal from "sweetalert2";
 
-const provider = new GoogleAuthProvider();
 
 const Login = () => {
     const {signInUser, googleLogin} = useContext(AuthContext);
+    const provider = new GoogleAuthProvider();
 
     const handleSignIn = (e)=>{
         e.preventDefault();
