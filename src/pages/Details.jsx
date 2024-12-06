@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
+import Footer from '../components/Footer/Footer';
 
 const Details = () => {
     const gamers = useLoaderData();
@@ -32,7 +33,9 @@ const Details = () => {
                 </div>
             </div>
             </div>
-
+            <section className="mt-24">
+                <Footer></Footer>
+            </section>
         </div>
     );
 };

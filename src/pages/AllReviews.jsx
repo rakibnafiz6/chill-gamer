@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import { useState } from "react";
+import Footer from "../components/Footer/Footer";
 
 
 const AllReviews = () => {
@@ -31,7 +32,9 @@ const AllReviews = () => {
                     </div>)
                 }
             </div>
-
+            <section className="mt-24">
+                <Footer></Footer>
+            </section>    
         </div>
     );
 };

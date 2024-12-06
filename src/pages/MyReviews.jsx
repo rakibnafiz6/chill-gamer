@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import Footer from "../components/Footer/Footer";
 
 const MyReviews = () => {
     const reviews = useLoaderData();
@@ -83,6 +84,9 @@ const MyReviews = () => {
                 </table>
 
             </div>
+            <section className="mt-24">
+                <Footer></Footer>
+            </section>
 
         </div>
     );

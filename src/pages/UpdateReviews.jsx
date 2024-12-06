@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar/Navbar';
 import { AuthContext } from '../providers/AuthProvider';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import Footer from '../components/Footer/Footer';
 
 const UpdateReviews = () => {
      const { user } = useContext(AuthContext);
@@ -135,6 +136,9 @@ const UpdateReviews = () => {
                 </div>
                 <button className='btn w-full bg-accent'>Update</button>
             </form>
+            <section className="mt-24">
+                <Footer></Footer>
+            </section>
         </div>
     );
 };

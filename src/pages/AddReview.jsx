@@ -2,6 +2,7 @@ import Swal from 'sweetalert2';
 import Navbar from '../components/Navbar/Navbar';
 import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
+import Footer from '../components/Footer/Footer';
 
 const AddReview = () => {
     const { user } = useContext(AuthContext);
@@ -139,6 +140,9 @@ const AddReview = () => {
                 </div>
                 <button className='btn w-full bg-accent'>Submit</button>
             </form>
+            <section className="mt-24">
+                <Footer></Footer>
+            </section>
         </div>
     );
 };
