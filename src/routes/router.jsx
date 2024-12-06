@@ -8,11 +8,13 @@ import GameWatchList from "../pages/GameWatchList";
 import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import AllReviews from "../pages/AllReviews";
 import Error from "../pages/Error";
+import Details from "../pages/Details";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <HomeLayout></HomeLayout>,
+      loader: ()=> fetch('http://localhost:5000/highsRating')
     },
     {
         path: '/login',
@@ -37,13 +39,19 @@ const router = createBrowserRouter([
         path: '/myReviews',
         element: <PrivateRoutes>
             <MyReviews></MyReviews>
-        </PrivateRoutes>
+        </PrivateRoutes>,
+        
     },
     {
         path: '/watchList',
         element: <PrivateRoutes>
             <GameWatchList></GameWatchList>
         </PrivateRoutes>
+    },
+    {
+        path: '/details/:id',
+        element: <Details></Details>,
+        loader: ({params})=> fetch(`http://localhost:5000/gamers/${params.id}`)
     },
     {
         path: '*',

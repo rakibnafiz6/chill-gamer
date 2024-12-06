@@ -40,7 +40,7 @@ const AddReview = () => {
             })
             return;
         }
-
+        // game
         fetch('http://localhost:5000/gamers', {
             method: 'POST',
             headers: {
@@ -60,6 +60,18 @@ const AddReview = () => {
                     })
                 }
 
+            })
+        // rating
+        fetch('http://localhost:5000/highsRating', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addInfo)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
             })
 
     }
@@ -110,11 +122,6 @@ const AddReview = () => {
                     </select>
                 </div>
                 <div className='flex gap-3 mb-3'>
-                    {/* <input
-                        type="text"
-                        name='userName'
-                        placeholder="user name"
-                        className="input input-bordered input-accent w-full" /> */}
                         <input
                         type="text"
                         name='userName'
@@ -122,12 +129,6 @@ const AddReview = () => {
                         placeholder="user name"
                         className="input input-bordered input-accent w-full"
                         disabled />
-                    {/* <input
-                        type="text"
-                        name='email'
-                        defaultValue={user.email}
-                        placeholder="user email"
-                        className="input input-bordered input-accent w-full" /> */}
                     <input
                         type="email"
                         name='email'
