@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import Swal from "sweetalert2";
 import { useState } from "react";
@@ -71,7 +71,7 @@ const MyReviews = () => {
                                 <td>{review.rating}</td>
                                 <td>{review.genres}</td>
                                 <td><div>
-                                    <button className="btn mb-2 lg:mr-2 btn-accent">Update</button>
+                                    <Link to={`/update/${review._id}`}><button className="btn mb-2 lg:mr-2 btn-accent">Update</button></Link>
                                     <button
                                         onClick={()=> handleDelete(review._id)}
                                         className="btn btn-error">Delete</button>

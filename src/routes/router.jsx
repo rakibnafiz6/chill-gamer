@@ -9,6 +9,7 @@ import PrivateRoutes from "../PrivateRoutes/PrivateRoutes";
 import AllReviews from "../pages/AllReviews";
 import Error from "../pages/Error";
 import Details from "../pages/Details";
+import UpdateReviews from "../pages/UpdateReviews";
 
 const router = createBrowserRouter([
     {
@@ -53,6 +54,11 @@ const router = createBrowserRouter([
         path: '/details/:id',
         element: <Details></Details>,
         loader: ({params})=> fetch(`http://localhost:5000/gamers/${params.id}`)
+    },
+    {
+        path: '/update/:id',
+        element: <UpdateReviews></UpdateReviews>,
+        loader: ({params})=> fetch(`http://localhost:5000/updateReview/${params.id}`)
     },
     {
         path: '*',
