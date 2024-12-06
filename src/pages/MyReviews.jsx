@@ -1,20 +1,50 @@
-import { useContext, useEffect, useState } from "react";
-import { AuthContext } from "../providers/AuthProvider";
+import { useLoaderData } from "react-router-dom";
+import Navbar from "../components/Navbar/Navbar";
 
 const MyReviews = () => {
-    const {user} = useContext(AuthContext);
-    const [ratingUsers, setRatingUsers] = useState([]);
+    const reviews = useLoaderData();
 
-    // useEffect( ()=>{
-    //     fetch(`http://localhost:5000/gamers/${user.email}`)
-    //     .then(res => res.json())
-    //     .then(data => setRatingUsers(data))
-    // },[user]);
+
+
+
 
     return (
         <div>
-           <h2>My Reviews {ratingUsers.length}</h2>
-           
+            <nav className="w-11/12 mx-auto py-4">
+                <Navbar></Navbar>
+            </nav>
+            <h2 className="text-center text-2xl font-bold mb-5">My Reviews</h2>
+            <div className="overflow-x-auto w-11/12 mx-auto lg:pl-16">
+                <table className="table">
+                    {/* head */}
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Name</th>
+                            <th>Rating</th>
+                            <th>Genre</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            reviews.map((review, idx)=><tr>
+                            <th>{idx + 1}</th>
+                            <td>{review.name}</td>
+                            <td>{review.rating}</td>
+                            <td>{review.genres}</td>
+                            <td><div>
+                                <button className="btn mb-2 lg:mr-2">Update</button>
+                                <button className="btn">Delete</button>
+                                </div></td>
+                        </tr>)
+                        }
+                       
+                    </tbody>
+                </table>
+               
+            </div>
+
         </div>
     );
 };

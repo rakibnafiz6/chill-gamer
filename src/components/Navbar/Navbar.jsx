@@ -42,7 +42,7 @@ const Navbar = () => {
                         <Link to='/'><li><a>Home</a></li></Link>
                         <Link to='/allReviews'><li><a>All Reviews</a></li></Link>
                         <Link to='/addReview'><li><a>Add Review</a></li></Link>
-                        <Link to='/myReviews'><li><a>My Reviews</a></li></Link>
+                        <Link to={`/myReviews/${user?.email}`}><li><a>My Reviews</a></li></Link>
                         <Link to='/watchList'><li><a>Game WatchList</a></li></Link>
                     </ul>
                 </div>
@@ -53,7 +53,7 @@ const Navbar = () => {
                     <Link to='/'><li><a>Home</a></li></Link>
                     <Link to='/allReviews'><li><a>All Reviews</a></li></Link>
                     <Link to='/addReview'><li><a>Add Review</a></li></Link>
-                    <Link to='/myReviews'><li><a>My Reviews</a></li></Link>
+                    <Link to={`/myReviews/${user?.email}`}><li><a>My Reviews</a></li></Link>
                     <Link to='/watchList'><li><a>Game WatchList</a></li></Link>
                 </ul>
             </div>

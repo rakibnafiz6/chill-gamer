@@ -36,10 +36,11 @@ const router = createBrowserRouter([
         loader: ()=> fetch('http://localhost:5000/gamers')
     },
     {
-        path: '/myReviews',
+        path: '/myReviews/:email',
         element: <PrivateRoutes>
             <MyReviews></MyReviews>
         </PrivateRoutes>,
+        loader: ({params})=> fetch(`http://localhost:5000/gamer/${params.email}`)
         
     },
     {
