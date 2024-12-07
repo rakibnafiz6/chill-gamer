@@ -63,17 +63,17 @@ const AddReview = () => {
 
             })
         // rating
-        fetch('http://localhost:5000/highsRating', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(addInfo)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-            })
+        // fetch('http://localhost:5000/highsRating', {
+        //     method: 'POST',
+        //     headers: {
+        //         'content-type': 'application/json'
+        //     },
+        //     body: JSON.stringify(addInfo)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+        //     })
 
     }
 

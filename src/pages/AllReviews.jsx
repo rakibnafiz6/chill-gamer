@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Navbar from "../components/Navbar/Navbar";
 import { useState } from "react";
 import Footer from "../components/Footer/Footer";
@@ -26,7 +26,7 @@ const AllReviews = () => {
                             <p>Publishing Year: {gamer.year}</p>
                             <p>Rating: {gamer.rating}</p>
                             <div className="card-actions">
-                                <button className="btn btn-primary">Explore Details</button>
+                                <Link to={`/details/${gamer._id}`}><button className="btn btn-accent">Explore Details</button></Link>
                             </div>
                         </div>
                     </div>)

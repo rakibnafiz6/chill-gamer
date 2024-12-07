@@ -11,6 +11,7 @@ import Error from "../pages/Error";
 import Details from "../pages/Details";
 import UpdateReviews from "../pages/UpdateReviews";
 
+
 const router = createBrowserRouter([
     {
       path: "/",
@@ -56,6 +57,7 @@ const router = createBrowserRouter([
         element: <Details></Details>,
         loader: ({params})=> fetch(`http://localhost:5000/gamers/${params.id}`)
     },
+   
     {
         path: '/update/:id',
         element: <UpdateReviews></UpdateReviews>,

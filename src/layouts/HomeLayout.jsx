@@ -19,7 +19,7 @@ const HomeLayout = () => {
             <section className="w-11/12 mx-auto mt-10">
             <HighsRating ratingGame={ratingGame}></HighsRating>
             </section>
-            <section className="mt-24">
+            <section className="mt-24 pl-2 lg:pl-0">
                 <Footer></Footer>
             </section>
         </div>

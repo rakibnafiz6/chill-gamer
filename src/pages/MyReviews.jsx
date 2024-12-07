@@ -52,7 +52,7 @@ const MyReviews = () => {
                 <Navbar></Navbar>
             </nav>
             <h2 className="text-center text-2xl font-bold mb-5">My Reviews</h2>
-            <div className="overflow-x-auto w-11/12 mx-auto lg:pl-16">
+            <div className="overflow-x-auto md:w-11/12 mx-auto lg:pl-16">
                 <table className="table">
                     {/* head */}
                     <thead>

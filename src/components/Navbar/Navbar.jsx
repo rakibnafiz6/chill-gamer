@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import Theme from "../Theme/Theme";
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
@@ -69,6 +70,9 @@ const Navbar = () => {
                     <Link to="/register" className="btn">Register</Link>
                     </div>
                 }
+                <section className="ml-3">
+                <Theme></Theme>
+                </section>
             </div>
         </div>
     );

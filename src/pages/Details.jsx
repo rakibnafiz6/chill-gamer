@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 
 const Details = () => {
     const gamers = useLoaderData();
+    console.log(gamers);
     const { name, photo, description, rating, genres, userName, email } = gamers;
 
     const handleAddWatchList = ()=>{
@@ -43,7 +44,7 @@ const Details = () => {
             <Navbar></Navbar>
             </nav>
             <h2 className='text-2xl font-bold text-center mb-5'>Details Page</h2>
-            <div className='w-4/12 mx-auto'>
+            <div className='lg:w-4/12 md:w-6/12 mx-auto'>
             <div className="card bg-base-100 w-96 shadow-xl">
                 <figure className="px-10 pt-10">
                     <img
