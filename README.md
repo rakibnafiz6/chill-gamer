@@ -1,5 +1,5 @@
 <h2>Website Name: Chill Gamer: A Game Review Application</h2>
-<p>Live Site URL:</p>
+<p>Live Site URL: https://chill-gamer-d6e04.web.app/</p>
 <h2>My Website Feature</h2>
 <h4>1. User Authentication:</h4>
 <li>Secure login and registration system to ensure personalized access.</li>

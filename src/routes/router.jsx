@@ -14,9 +14,9 @@ import UpdateReviews from "../pages/UpdateReviews";
 
 const router = createBrowserRouter([
     {
-      path: "/",
-      element: <HomeLayout></HomeLayout>,
-      loader: ()=> fetch('http://localhost:5000/highsRating')
+        path: "/",
+        element: <HomeLayout></HomeLayout>,
+        loader: () => fetch('https://chill-gamer-sarver.vercel.app/highsRating')
     },
     {
         path: '/login',
@@ -30,43 +30,43 @@ const router = createBrowserRouter([
         path: '/addReview',
         element: <PrivateRoutes>
             <AddReview></AddReview>
-         </PrivateRoutes>
+        </PrivateRoutes>
     },
     {
         path: '/allReviews',
         element: <AllReviews></AllReviews>,
-        loader: ()=> fetch('http://localhost:5000/gamers')
+        loader: () => fetch('https://chill-gamer-sarver.vercel.app/gamers')
     },
     {
         path: '/myReviews/:email',
         element: <PrivateRoutes>
             <MyReviews></MyReviews>
         </PrivateRoutes>,
-        loader: ({params})=> fetch(`http://localhost:5000/gamer/${params.email}`)
-        
+        loader: ({ params }) => fetch(`https://chill-gamer-sarver.vercel.app/gamer/${params.email}`)
+
     },
     {
         path: '/watchList/:email',
         element: <PrivateRoutes>
             <GameWatchList></GameWatchList>
         </PrivateRoutes>,
-        loader: ({params})=> fetch(`http://localhost:5000/watchList/${params.email}`)
+        loader: ({ params }) => fetch(`https://chill-gamer-sarver.vercel.app/watchList/${params.email}`)
     },
     {
         path: '/details/:id',
         element: <Details></Details>,
-        loader: ({params})=> fetch(`http://localhost:5000/gamers/${params.id}`)
+        loader: ({ params }) => fetch(`https://chill-gamer-sarver.vercel.app/gamers/${params.id}`)
     },
-   
+
     {
         path: '/update/:id',
         element: <UpdateReviews></UpdateReviews>,
-        loader: ({params})=> fetch(`http://localhost:5000/updateReview/${params.id}`)
+        loader: ({ params }) => fetch(`https://chill-gamer-sarver.vercel.app/updateReview/${params.id}`)
     },
     {
         path: '*',
         element: <Error></Error>
     }
-  ]);
+]);
 
 export default router;

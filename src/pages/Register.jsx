@@ -45,10 +45,10 @@ const Register = () => {
         }
             updateUserProfile(profile)
             .then(()=>{
-                console.log('update profile')
+                // console.log('update profile')
             })
             .catch(error =>{
-                console.log(error.message);
+                // console.log(error.message);
             })
         navigate('/');
         })

@@ -2,20 +2,21 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Theme from "../Theme/Theme";
+import { Tooltip } from "react-tooltip";
 
 const Navbar = () => {
     const { user, signOutUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    const handleSignOut = ()=>{
+    const handleSignOut = () => {
         signOutUser()
-        .then(()=>{
-            console.log('signOut successfully');
-            navigate('/');
-        })
-        .catch(error =>{
-            console.log(error.message);
-        })
+            .then(() => {
+                // console.log('signOut successfully');
+                navigate('/');
+            })
+            .catch(error => {
+                // console.log(error.message);
+            })
     }
 
 
@@ -61,17 +62,20 @@ const Navbar = () => {
             <div className="navbar-end">
                 {
                     user ? <div className="flex items-center gap-2">
-                     <div className="tooltip" data-tip={user?.displayName}>
-                     <img src={user?.photoURL} className="w-10 h-10 rounded-full object-cover" alt="" />
-                    </div>   
-                    <button onClick={handleSignOut} className="btn">Logout</button></div> 
-                    : <div>
-                    <Link to="/login" className="btn mr-2">Login</Link>
-                    <Link to="/register" className="btn">Register</Link>
-                    </div>
+                        <a className="my-anchor-element">
+                            <img src={user?.photoURL} className="w-10 h-10 rounded-full object-cover" alt="" />
+                        </a>
+                        <Tooltip anchorSelect=".my-anchor-element" place="top">
+                            {user.displayName}
+                        </Tooltip>
+                        <button onClick={handleSignOut} className="btn btn-accent">Logout</button></div>
+                        : <div>
+                            <Link to="/login" className="btn btn-accent mr-2">Login</Link>
+                            <Link to="/register" className="btn btn-accent">Register</Link>
+                        </div>
                 }
                 <section className="ml-3">
-                <Theme></Theme>
+                    <Theme></Theme>
                 </section>
             </div>
         </div>

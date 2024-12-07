@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar/Navbar";
 
 const GameWatchList = () => {
     const watchList = useLoaderData();
-    console.log(watchList);
+    
     return (
         <div>
             <nav className="w-11/12 mx-auto py-4">

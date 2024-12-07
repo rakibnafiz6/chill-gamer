@@ -17,7 +17,7 @@ const Login = () => {
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+    
         signInUser(email, password)
         .then(result =>{
             Swal.fire({
@@ -41,10 +41,10 @@ const Login = () => {
     const handleGoogle = ()=>{
         googleLogin(provider)
         .then(result =>{
-            console.log(result);
+            // console.log(result);
         })
         .catch(error =>{
-            console.log(error.message);
+            // console.log(error.message);
         })
     }
 

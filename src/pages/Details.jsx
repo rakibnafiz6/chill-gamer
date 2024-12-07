@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 
 const Details = () => {
     const gamers = useLoaderData();
-    console.log(gamers);
+    // console.log(gamers);
     const { name, photo, description, rating, genres, userName, email } = gamers;
 
     const handleAddWatchList = ()=>{
@@ -16,7 +16,7 @@ const Details = () => {
             userName, email
         }
     
-        fetch('http://localhost:5000/watchList', {
+        fetch('https://chill-gamer-sarver.vercel.app/watchList', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -25,7 +25,7 @@ const Details = () => {
         })
         .then(res => res.json())
         .then(data =>{
-            console.log(data);
+            // console.log(data);
             if (data.insertedId) {
                 Swal.fire({
                     title: 'Success!',

@@ -21,12 +21,12 @@ const MyReviews = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/gamers/${id}`, {
+                fetch(`https://chill-gamer-sarver.vercel.app/gamers/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
                     .then(data => {
-                        console.log(data);
+                        // console.log(data);
                        if(data.deletedCount){
                         Swal.fire({
                             title: "Deleted!",

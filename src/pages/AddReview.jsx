@@ -42,7 +42,7 @@ const AddReview = () => {
             return;
         }
         // game
-        fetch('http://localhost:5000/gamers', {
+        fetch('https://chill-gamer-sarver.vercel.app/gamers', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -51,7 +51,7 @@ const AddReview = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
@@ -62,18 +62,6 @@ const AddReview = () => {
                 }
 
             })
-        // rating
-        // fetch('http://localhost:5000/highsRating', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(addInfo)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //     })
 
     }
 

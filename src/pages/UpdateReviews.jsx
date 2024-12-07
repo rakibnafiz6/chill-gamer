@@ -45,7 +45,7 @@ const UpdateReviews = () => {
             return;
         }
         // game
-        fetch(`http://localhost:5000/updateReview/${_id}`, {
+        fetch(`https://chill-gamer-sarver.vercel.app/updateReview/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -54,7 +54,7 @@ const UpdateReviews = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.modifiedCount) {
                     Swal.fire({
                         title: 'Success!',
