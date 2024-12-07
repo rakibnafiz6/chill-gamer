@@ -43,7 +43,7 @@ const Navbar = () => {
                         <Link to='/allReviews'><li><a>All Reviews</a></li></Link>
                         <Link to='/addReview'><li><a>Add Review</a></li></Link>
                         <Link to={`/myReviews/${user?.email}`}><li><a>My Reviews</a></li></Link>
-                        <Link to='/watchList'><li><a>Game WatchList</a></li></Link>
+                        <Link to={`/watchList/${user?.email}`}><li><a>Game WatchList</a></li></Link>
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-xl">Chill Gamer</a>
@@ -54,7 +54,7 @@ const Navbar = () => {
                     <Link to='/allReviews'><li><a>All Reviews</a></li></Link>
                     <Link to='/addReview'><li><a>Add Review</a></li></Link>
                     <Link to={`/myReviews/${user?.email}`}><li><a>My Reviews</a></li></Link>
-                    <Link to='/watchList'><li><a>Game WatchList</a></li></Link>
+                    <Link to={`/watchList/${user?.email}`}><li><a>Game WatchList</a></li></Link>
                 </ul>
             </div>
             <div className="navbar-end">

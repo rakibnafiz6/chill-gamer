@@ -45,10 +45,11 @@ const router = createBrowserRouter([
         
     },
     {
-        path: '/watchList',
+        path: '/watchList/:email',
         element: <PrivateRoutes>
             <GameWatchList></GameWatchList>
-        </PrivateRoutes>
+        </PrivateRoutes>,
+        loader: ({params})=> fetch(`http://localhost:5000/watchList/${params.email}`)
     },
     {
         path: '/details/:id',

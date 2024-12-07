@@ -1,11 +1,42 @@
-import React from 'react';
+
 import { useLoaderData } from 'react-router-dom';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
+import Swal from 'sweetalert2';
 
 const Details = () => {
     const gamers = useLoaderData();
     const { name, photo, description, rating, genres, userName, email } = gamers;
+
+    const handleAddWatchList = ()=>{
+        const gamerInfo = {
+            name, photo, description, 
+            rating, genres, 
+            userName, email
+        }
+    
+        fetch('http://localhost:5000/watchList', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(gamerInfo)
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log(data);
+            if (data.insertedId) {
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Add To WatchList Successfully',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                })
+            }
+        })
+        
+    }
+
     return (
         <div>
             <nav className="w-11/12 mx-auto py-4">
@@ -28,7 +59,7 @@ const Details = () => {
                     <p className='text-gray-500'>Email: {email}</p>
                     <p className='text-gray-500'>{description}</p>
                     <div className="card-actions">
-                        <button className="btn btn-primary">Add to WatchList</button>
+                        <button onClick={handleAddWatchList} className="btn btn-primary">Add to WatchList</button>
                     </div>
                 </div>
             </div>
