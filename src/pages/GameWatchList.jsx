@@ -7,11 +7,11 @@ const GameWatchList = () => {
     
     return (
         <div>
-            <nav className="w-11/12 mx-auto py-4">
+            <nav className="md:w-11/12 mx-auto py-10">
                 <Navbar></Navbar>
             </nav>
             <h2 className="text-center font-bold text-2xl mb-5">Game Watch List</h2>
-            <div className="overflow-x-auto w-11/12 mx-auto">
+            <div className="overflow-x-hidden md:w-11/12 mx-auto">
                 <table className="table">
                     {/* head */}
                     <thead>

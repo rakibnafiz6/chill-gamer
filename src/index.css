@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+a.active{
+    background-color: aquamarine;
+    border-radius: 10px;
+    
+}
+
+table tr{
+    font-weight: 500;
+}
+
 :root {
     --body-background: white;
     --title: black;

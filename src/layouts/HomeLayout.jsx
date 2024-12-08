@@ -12,7 +12,7 @@ const HomeLayout = () => {
     
     return (
         <div>
-            <nav className="w-11/12 mx-auto mb-3 mt-10">
+            <nav className="md:w-11/12 mx-auto mb-3 mt-10">
             <Navbar></Navbar>
             </nav>
             <section className="mb-10 pl-14">
@@ -27,7 +27,7 @@ const HomeLayout = () => {
             <section className="w-11/12 mx-auto mt-10">
             <WhyChoose></WhyChoose>
             </section>
-            <section className="mt-24 pl-2 lg:pl-0">
+            <section className="mt-24">
                 <Footer></Footer>
             </section>
         </div>

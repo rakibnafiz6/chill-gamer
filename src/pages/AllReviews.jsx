@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 const AllReviews = () => {
     const loadedGamer = useLoaderData();
     const [gamers, setGamers] = useState(loadedGamer);
+    const [filteredReviews, setFilteredReviews] = useState(loadedGamer);
     const [sort, setSort] = useState('');
     const [genre, setGenre] = useState('');
 
@@ -16,7 +17,7 @@ const AllReviews = () => {
 
         if(sortType === 'Ratings'){
             const sortRating = [...gamers].sort((a, b)=> a.rating - b.rating );
-            setGamers(sortRating);
+            setFilteredReviews(sortRating);
             Swal.fire({
                 title: 'Success!',
                 text: 'Sort Rating ascending order',
@@ -26,7 +27,7 @@ const AllReviews = () => {
         }
         else{
             const sortYear = [...gamers].sort((a, b)=> b.year - a.year);
-            setGamers(sortYear);
+            setFilteredReviews(sortYear);
             Swal.fire({
                 title: 'Success!',
                 text: 'Sort Year descending order',
@@ -39,21 +40,12 @@ const AllReviews = () => {
     const handleGenre = genre =>{
         setGenre(genre);
 
-         if(genre === 'Action'){
-            const filterAction = [...gamers].filter(gamer => gamer.genres === genre);
-          setGamers(filterAction);
-          
+        if(genre === ''){
+            setFilteredReviews(gamers);
         }
-         else if(genre === 'RPG'){
-            const filterRpg = [...gamers].filter(gamer => gamer.genres === genre);
-            setGamers(filterRpg);
-            
-        }
-
         else{
-            const filterAdventure = [...gamers].filter(gamer => gamer.genres === genre);
-            setGamers(filterAdventure);
-            
+            const filtered = gamers.filter((review) => review.genres === genre);
+            setFilteredReviews(filtered);
         }
         
     } 
@@ -61,7 +53,7 @@ const AllReviews = () => {
 
     return (
         <div>
-            <nav className="w-11/12 mx-auto py-4">
+            <nav className="md:w-11/12 mx-auto py-10">
                 <Navbar></Navbar>
             </nav>
            <div className="flex gap-4 justify-center">
@@ -95,11 +87,12 @@ const AllReviews = () => {
            </div>
             <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {
-                    gamers.map(gamer => <div key={gamer._id} className="card bg-base-100 shadow-xl">
-                        <figure className="h-56 p-3">
+                   filteredReviews.length > 0 ? (
+                    filteredReviews.map(gamer => <div key={gamer._id} className="card bg-base-100 shadow-xl">
+                        <figure className="h-56 w-[360px] p-3">
                             <img
                                 src={gamer.photo}
-                                className="rounded-md"
+                                className="rounded-md w-full h-full"
                                 alt="Game" />
                         </figure>
                         <div className="card-body">
@@ -112,6 +105,10 @@ const AllReviews = () => {
                             </div>
                         </div>
                     </div>)
+                   ) : (
+                    <p className="text-center font-bold text-2xl">No reviews found.</p>
+                    
+                   )
                 }
             </div>
             <section className="mt-24">

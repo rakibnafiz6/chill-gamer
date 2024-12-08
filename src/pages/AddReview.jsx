@@ -32,10 +32,10 @@ const AddReview = () => {
             })
             return;
         }
-        if (year < 2021 || year > 2024) {
+        if (year < 2020 || year > 2024) {
             Swal.fire({
                 title: 'Error!',
-                text: 'Publishing year should be (2021-2024)',
+                text: 'Publishing year should be (2020-2024)',
                 icon: 'error',
                 confirmButtonText: 'OK'
             })
@@ -59,6 +59,7 @@ const AddReview = () => {
                         icon: 'success',
                         confirmButtonText: 'OK'
                     })
+                    form.reset();
                 }
 
             })
@@ -67,7 +68,7 @@ const AddReview = () => {
 
     return (
         <div>
-            <nav className="w-11/12 mx-auto py-4">
+            <nav className="md:w-11/12 mx-auto py-10">
                 <Navbar></Navbar>
             </nav>
             <h2 className='text-center mb-4 text-2xl font-bold'>Add Review</h2>

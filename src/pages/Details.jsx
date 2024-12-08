@@ -40,7 +40,7 @@ const Details = () => {
 
     return (
         <div>
-            <nav className="w-11/12 mx-auto py-4">
+            <nav className="md:w-11/12 mx-auto py-10">
             <Navbar></Navbar>
             </nav>
             <h2 className='text-2xl font-bold text-center mb-5'>Details Page</h2>

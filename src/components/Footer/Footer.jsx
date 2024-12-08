@@ -18,7 +18,7 @@ const Footer = () => {
                     <div className="">
                         
 
-                            <nav className="mt-2 space-y-2 flex flex-col">
+                            <nav className="mt-2 space-y-2 flex flex-col pl-7">
                                 <h6 className="footer-title">Services</h6>
                                 <a className="link link-hover">Branding</a>
                                 <a className="link link-hover">Design</a>
@@ -29,7 +29,7 @@ const Footer = () => {
                     </div>
 
 
-                    <div className="">
+                    <div className="pl-7">
                         <h3 className="footer-title">Contact Us</h3>
                         <p className="hover:underline">Email: support@chillgamer.com</p>
                         <p>Phone: +880  1877 803 510</p>

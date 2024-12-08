@@ -7,9 +7,11 @@ import Footer from "../components/Footer/Footer";
 const MyReviews = () => {
     const reviews = useLoaderData();
     const [users, setUsers] = useState(reviews);
+    
 
 
     const handleDelete = (id) => {
+        
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -26,19 +28,20 @@ const MyReviews = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        // console.log(data);
-                       if(data.deletedCount){
-                        Swal.fire({
-                            title: "Deleted!",
-                            text: "Your file has been deleted.",
-                            icon: "success"
-                          });
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            })
+                            
+                            const remaining = users.filter(user => user._id !== id);
+                            setUsers(remaining);
 
-                        const remainingReviews = users.filter(user => user._id !== id);
-                        setUsers(remainingReviews);
-                       }
-
-            })
+                           
+                        }
+                        
+                    })
             }
         });
 
@@ -48,11 +51,11 @@ const MyReviews = () => {
 
     return (
         <div>
-            <nav className="w-11/12 mx-auto py-4">
+            <nav className="md:w-11/12 mx-auto py-10">
                 <Navbar></Navbar>
             </nav>
             <h2 className="text-center text-2xl font-bold mb-5">My Reviews</h2>
-            <div className="overflow-x-auto md:w-11/12 mx-auto lg:pl-16">
+            <div className="overflow-x-hidden  md:w-11/12 mx-auto lg:pl-16">
                 <table className="table">
                     {/* head */}
                     <thead>
@@ -66,15 +69,15 @@ const MyReviews = () => {
                     </thead>
                     <tbody>
                         {
-                            reviews.map((review, idx) => <tr key={idx}>
+                            users.map((review, idx) => <tr key={idx}>
                                 <th>{idx + 1}</th>
                                 <td>{review.name}</td>
                                 <td>{review.rating}</td>
                                 <td>{review.genres}</td>
                                 <td><div>
-                                    <Link to={`/update/${review._id}`}><button className="btn mb-2 lg:mr-2 btn-accent">Update</button></Link>
+                                    <Link to={`/update/${review._id}`}><button className="btn mb-2 md:mr-2 btn-accent">Update</button></Link>
                                     <button
-                                        onClick={()=> handleDelete(review._id)}
+                                        onClick={() => handleDelete(review._id)}
                                         className="btn btn-error">Delete</button>
                                 </div></td>
                             </tr>)
