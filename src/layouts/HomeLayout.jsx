@@ -12,7 +12,7 @@ const HomeLayout = () => {
     
     return (
         <div>
-            <nav className="md:w-11/12 mx-auto mb-3 mt-10">
+            <nav className="md:w-11/12 mx-auto mb-3 pt-3 sticky top-0 z-50 backdrop-blur-2xl">
             <Navbar></Navbar>
             </nav>
             <section className="mb-10 pl-14">

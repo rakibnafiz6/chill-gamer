@@ -51,8 +51,8 @@ const MyReviews = () => {
 
     return (
         <div>
-            <nav className="md:w-11/12 mx-auto py-10">
-                <Navbar></Navbar>
+             <nav className="md:w-11/12 mx-auto mb-3 pt-3 sticky top-0 z-50 backdrop-blur-2xl">
+            <Navbar></Navbar>
             </nav>
             <h2 className="text-center text-2xl font-bold mb-5">My Reviews</h2>
             <div className="overflow-x-hidden  md:w-11/12 mx-auto lg:pl-16">

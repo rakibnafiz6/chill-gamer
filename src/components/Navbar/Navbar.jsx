@@ -21,7 +21,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-[#21aec4] rounded-md lg:pr-6">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -42,10 +42,16 @@ const Navbar = () => {
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                         <NavLink to='/'><li><a>Home</a></li></NavLink>
-                        <NavLink to='/allReviews'><li><a>All Reviews</a></li></NavLink>
-                        <NavLink to='/addReview'><li><a>Add Review</a></li></NavLink>
-                        <NavLink to={`/myReviews/${user?.email}`}><li><a>My Reviews</a></li></NavLink>
-                        <NavLink to={`/watchList/${user?.email}`}><li><a>Game WatchList</a></li></NavLink>
+                        <NavLink to='/about'><li><a>About Us</a></li></NavLink>
+                        <NavLink to='/about'><li><a>Contact</a></li></NavLink>
+                        {
+                            user && <>
+                                <NavLink to='/allReviews'><li><a>All Reviews</a></li></NavLink>
+                                <NavLink to='/addReview'><li><a>Add Review</a></li></NavLink>
+                                <NavLink to={`/myReviews/${user?.email}`}><li><a>My Reviews</a></li></NavLink>
+                                <NavLink to={`/watchList/${user?.email}`}><li><a>Game WatchList</a></li></NavLink>
+                            </>
+                        }
                     </ul>
                 </div>
                 <a className="btn btn-ghost text-xl">Chill Gamer</a>
@@ -53,10 +59,16 @@ const Navbar = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     <NavLink to='/'><li><a>Home</a></li></NavLink>
-                    <NavLink to='/allReviews'><li><a>All Reviews</a></li></NavLink>
-                    <NavLink to='/addReview'><li><a>Add Review</a></li></NavLink>
-                    <NavLink to={`/myReviews/${user?.email}`}><li><a>My Reviews</a></li></NavLink>
-                    <NavLink to={`/watchList/${user?.email}`}><li><a>Game WatchList</a></li></NavLink>
+                    <NavLink to='/about'><li><a>About Us</a></li></NavLink>
+                    <NavLink to='/about'><li><a>Contact</a></li></NavLink>
+                    {
+                        user && <>
+                            <NavLink to='/allReviews'><li><a>All Reviews</a></li></NavLink>
+                            <NavLink to='/addReview'><li><a>Add Review</a></li></NavLink>
+                            <NavLink to={`/myReviews/${user?.email}`}><li><a>My Reviews</a></li></NavLink>
+                            <NavLink to={`/watchList/${user?.email}`}><li><a>Game WatchList</a></li></NavLink>
+                        </>
+                    }
                 </ul>
             </div>
             <div className="navbar-end">
@@ -68,10 +80,10 @@ const Navbar = () => {
                         <Tooltip anchorSelect=".my-anchor-element" place="top">
                             {user.displayName}
                         </Tooltip>
-                        <button onClick={handleSignOut} className="btn btn-accent">Logout</button></div>
+                        <button onClick={handleSignOut} className="btn bg-[#24d624]">Logout</button></div>
                         : <div>
-                            <Link to="/login" className="btn btn-accent mr-2">Login</Link>
-                            <Link to="/register" className="btn btn-accent">Register</Link>
+                            <Link to="/login" className="btn bg-[#24d624] mr-2">Login</Link>
+                            <Link to="/register" className="btn bg-[#24d624]">Register</Link>
                         </div>
                 }
                 <section className="ml-3">

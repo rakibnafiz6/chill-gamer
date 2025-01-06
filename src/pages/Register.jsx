@@ -64,8 +64,8 @@ const Register = () => {
 
     return (
         <div>
-            <nav className="w-11/12 mx-auto py-10">
-                <Navbar></Navbar>
+             <nav className="md:w-11/12 mx-auto mb-3 pt-3 sticky top-0 z-50 backdrop-blur-2xl">
+            <Navbar></Navbar>
             </nav>
 
             <div className="hero bg-base-200 min-h-screen">

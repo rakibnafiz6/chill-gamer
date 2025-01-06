@@ -18,7 +18,7 @@ const Theme = () => {
                     type="checkbox"
                     onChange={switchTheme}
                     value="synthwave"
-                    className="toggle bg-blue-600 theme-controller  col-span-2 col-start-1 row-start-1" />
+                    className="toggle bg-[#b090c1] theme-controller  col-span-2 col-start-1 row-start-1" />
                 <svg
                     className="stroke-base-100 fill-base-100 col-start-1 row-start-1"
                     xmlns="http://www.w3.org/2000/svg"

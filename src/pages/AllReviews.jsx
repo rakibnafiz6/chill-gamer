@@ -53,8 +53,8 @@ const AllReviews = () => {
 
     return (
         <div>
-            <nav className="md:w-11/12 mx-auto py-10">
-                <Navbar></Navbar>
+            <nav className="md:w-11/12 mx-auto mb-3 pt-3 sticky top-0 z-50 backdrop-blur-2xl">
+            <Navbar></Navbar>
             </nav>
            <div className="flex gap-4 justify-center">
              {/* rating and year */}

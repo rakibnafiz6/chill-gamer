@@ -21,7 +21,7 @@ const AddReview = () => {
         const addInfo = {
             photo, name, description, rating, year, genres, userName, email
         }
-        
+
 
         if (rating > 10) {
             Swal.fire({
@@ -68,7 +68,7 @@ const AddReview = () => {
 
     return (
         <div>
-            <nav className="md:w-11/12 mx-auto py-10">
+            <nav className="md:w-11/12 mx-auto mb-3 pt-3 sticky top-0 z-50 backdrop-blur-2xl">
                 <Navbar></Navbar>
             </nav>
             <h2 className='text-center mb-4 text-2xl font-bold'>Add Review</h2>
@@ -112,7 +112,7 @@ const AddReview = () => {
                     </select>
                 </div>
                 <div className='flex gap-3 mb-3'>
-                        <input
+                    <input
                         type="text"
                         name='userName'
                         defaultValue={user.displayName}
