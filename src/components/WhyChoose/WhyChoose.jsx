@@ -1,8 +1,8 @@
 const WhyChoose = () => {
     return (
         <div>
-        <h2 className="text-2xl font-bold text-center pt-5">Why Choose Chill Gamer?</h2>
-        <div className="my-10 p-5 bg-blue-100 rounded shadow">
+        <h2 className="text-2xl font-bold text-center mb-8">Why Choose Chill Gamer?</h2>
+        <div className="p-10 bg-[#63c463] rounded shadow">
         <div className="space-y-4">
           <p>🎮 <strong>Discover New Games:</strong> Explore reviews for the latest and greatest games.</p>
           <p>📝 <strong>Share Your Thoughts:</strong> Write reviews and share your experiences with the community.</p>
