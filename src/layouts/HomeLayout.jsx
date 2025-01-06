@@ -6,6 +6,7 @@ import Footer from "../components/Footer/Footer";
 import TypeWriter from "../components/TypeWriter/TypeWriter";
 import WhyChoose from "../components/WhyChoose/WhyChoose";
 import Testimonials from "../components/Testimonials/Testimonials";
+import NewsLetter from "../components/NewsLetter/NewsLetter";
 
 const HomeLayout = () => {
     const ratingGame = useLoaderData();
@@ -30,6 +31,9 @@ const HomeLayout = () => {
             </section>
             <section className="w-11/12 mx-auto mt-8">
             <Testimonials></Testimonials>
+            </section>
+            <section className="w-11/12 mx-auto mt-8">
+            <NewsLetter></NewsLetter>
             </section>
             <section className="mt-8">
                 <Footer></Footer>
