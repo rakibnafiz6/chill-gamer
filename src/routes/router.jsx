@@ -10,6 +10,7 @@ import AllReviews from "../pages/AllReviews";
 import Error from "../pages/Error";
 import Details from "../pages/Details";
 import UpdateReviews from "../pages/UpdateReviews";
+import AboutUs from "../components/AboutUs/AboutUs";
 
 
 const router = createBrowserRouter([
@@ -34,7 +35,9 @@ const router = createBrowserRouter([
     },
     {
         path: '/allReviews',
-        element: <AllReviews></AllReviews>,
+        element: <PrivateRoutes>
+            <AllReviews></AllReviews>
+        </PrivateRoutes>,
         loader: () => fetch('https://chill-gamer-sarver.vercel.app/gamers')
     },
     {
@@ -62,6 +65,10 @@ const router = createBrowserRouter([
         path: '/update/:id',
         element: <UpdateReviews></UpdateReviews>,
         loader: ({ params }) => fetch(`https://chill-gamer-sarver.vercel.app/updateReview/${params.id}`)
+    },
+    {
+        path: '/about',
+        element: <AboutUs></AboutUs>
     },
     {
         path: '*',

@@ -2,11 +2,13 @@ import { Link } from "react-router-dom";
 
 const Error = () => {
     return (
-        <div className="flex flex-col items-center pt-40">
-            <h2>Error</h2>
-            <p>Page Not found</p>
-            <p>404</p>
-            <Link to='/' className="btn bg-neutral text-white">Go Back</Link>
+        <div className="flex flex-col items-center min-h-screen pt-4">
+            <h2 className="text-4xl font-bold text-[#b090c1]">Sorry</h2>
+            <p className="text-[#63c463] mb-2">Page Not Found</p>
+            <img src="https://i.ibb.co.com/5Gxt2LM/download.jpg"
+            className="w-52"
+             alt="" />
+            <Link to='/' className="btn bg-[#21aec4] mt-2">Go Back</Link>
         </div>
     );
 };

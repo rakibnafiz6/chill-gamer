@@ -1,12 +1,12 @@
-import { FaFacebook, FaInstagramSquare } from "react-icons/fa";
+import { FaFacebook, FaGithubAlt, FaInstagramSquare } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { IoLogoYoutube } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 
 const Footer = () => {
     return (
         <div>
-            <footer className="bg-gray-800 text-white py-6">
+            <footer className="bg-gray-800 text-white py-6 pl-6">
                 <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
 
                     <div className="pl-5">
@@ -19,25 +19,26 @@ const Footer = () => {
                         
 
                             <nav className="mt-2 space-y-2 flex flex-col pl-7">
-                                <h6 className="footer-title">Services</h6>
-                                <a className="link link-hover">Branding</a>
-                                <a className="link link-hover">Design</a>
-                                <a className="link link-hover">Marketing</a>
-                                <a className="link link-hover">Advertisement</a>
+                                <h6 className="footer-title">Quick Links</h6>
+                                <Link to='/' className="link link-hover">Home</Link>
+                                <Link to='/about' className="link link-hover">About Us</Link>
+                                <Link to='/allReviews' className="link link-hover">All Reviews</Link>
+                                <Link to='/addReview' className="link link-hover">Add Reviews</Link>
                             </nav>
                         
                     </div>
 
-
+                    
                     <div className="pl-7">
                         <h3 className="footer-title">Contact Us</h3>
                         <p className="hover:underline">Email: support@chillgamer.com</p>
                         <p>Phone: +880  1877 803 510</p>
-                        <div className="mt-4 flex space-x-4">
-                            <FaFacebook />
+                        <div className="mt-4 flex space-x-4 text-2xl">
+                            <Link to='https://www.facebook.com/nafiz.al.rakib/'><FaFacebook /></Link>
+                            <Link to='https://github.com/rakibnafiz6'><FaGithubAlt/></Link>
                             <FaXTwitter />
                             <FaInstagramSquare />
-                            <IoLogoYoutube />
+                            
                         </div>
                     </div>
                 </div>

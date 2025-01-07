@@ -35,7 +35,7 @@ const HomeLayout = () => {
             <section className="w-11/12 mx-auto mt-8">
             <NewsLetter></NewsLetter>
             </section>
-            <section className="mt-8">
+            <section className="w-11/12 mx-auto mt-8">
                 <Footer></Footer>
             </section>
         </div>

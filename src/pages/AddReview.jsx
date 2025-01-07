@@ -23,10 +23,10 @@ const AddReview = () => {
         }
 
 
-        if (rating > 10) {
+        if (rating > 5) {
             Swal.fire({
                 title: 'Error!',
-                text: 'Rating must be (1-10)',
+                text: 'Rating must be (1-5)',
                 icon: 'error',
                 confirmButtonText: 'OK'
             })
