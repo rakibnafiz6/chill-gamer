@@ -47,6 +47,7 @@ MONGODB_URI=your-mongodb-uri
 JWT_SECRET=your-jwt-secret-key
 </p>
 <h4>Live Link: https://chill-gamer-d6e04.web.app/</h4>
+<h4>Github Link Server: https://github.com/rakibnafiz6/chill-gamer-server</h4>
 
 
 
