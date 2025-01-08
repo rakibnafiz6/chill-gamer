@@ -1,20 +1,55 @@
-<h2>Website Name: Chill Gamer: A Game Review Application</h2>
-<p>Live Site URL: https://chill-gamer-d6e04.web.app/</p>
-<h2>My Website Feature</h2>
-<h4>1. User Authentication:</h4>
-<li>Secure login and registration system to ensure personalized access.</li>
-<li>Conditional navigation based on user authentication status (e.g., protected routes for logged-in users).</li>
-<h4>2. Game Reviews Management:</h4>
-<li>Users can explore detailed reviews of games, including title, cover image, description, rating, genre, and publishing year.</li>
-<li>Logged-in users can add, edit, or delete their reviews with a clean and user-friendly interface.</li>
-<h4>3. Game Watchlist:</h4>
-<li>A dedicated watchlist page allows users to manage and view their saved games.</li>
-<h4>4. Interactive and Responsive UI:</h4>
-<li>A clean, responsive design ensures a seamless experience on both desktop and mobile devices.</li>
-<li>Toast or alert notifications for success/error messages enhance interactivity.</li>
-<h4>5. Private and Protected Routes:</h4>
-<li>Features like "Add Review," "My Reviews," and "Game Watchlist" are accessible only to authenticated users, ensuring privacy and security.</li>
-<li>Non-logged-in users are redirected to the login page when attempting to access protected routes.</li>
+<h1>Chill Gamer: A Game Review Application</h1>
+<p>Chill Gamer is a user-friendly platform where users can explore, share, and manage game reviews. It features user authentication, review management, and a responsive design, providing a clean and functional user experience. The application allows users to log in, submit reviews, update them, and add games to their watchlist.</p>
+<h2>Tech Stack</h2>
+<li>Frontend: React, Tailwind CSS, React Router</li>
+<li>Backend: Node.js, Express, MongoDB</li>
+<li>Authentication: Firebase</li>
+<li>Hosting: Firebase (Client-side), Vercel (Server-side)</li>
+<h2>Features</h2>
+<li>User authentication with Firebase (Login/Registration)</li>
+<li>Add, update, and delete game reviews</li>
+<li>Explore game reviews in a card format</li>
+<li>View detailed review information on a separate page</li>
+<li>User-specific game watchlist</li>
+<li>Responsive design for desktop, tablet, and mobile views</li>
+<li>Sorting and filtering features for game reviews</li>
+<li>Dark/Light theme toggle</li>
+<h2>Dependencies</h2>
+<h4>Frontend:</h4>
+<li>react</li>
+<li>react-router-dom</li>
+<li>tailwindcss</li>
+<li>firebase</li>
+<li>react-toastify</li>
+<h4>Backend:</h4>
+<li>express</li>
+<li>mongodb</li>
+<li>dotenv</li>
+<li>jsonwebtoken</li>
+<h2>How to Run Locally</h2>
+<h4>1. Clone the repository</h4>
+<h3>Set up the Client (Frontend):</h3>
+<li>npm install</li>
+<li>Create the .env File</li>
+<h4>2. Add Firebase Configuration</h4>
+<p>REACT_APP_FIREBASE_API_KEY=your-firebase-api-key
+REACT_APP_FIREBASE_AUTH_DOMAIN=your-firebase-auth-domain
+REACT_APP_FIREBASE_PROJECT_ID=your-firebase-project-id
+REACT_APP_FIREBASE_STORAGE_BUCKET=your-firebase-storage-bucket
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=your-firebase-messaging-sender-id
+REACT_APP_FIREBASE_APP_ID=your-firebase-app-id</p>
+<h3>Set up the Server (Backend):</h3>
+<li>npm install</li>
+<h4>Server-Side Environment Variables</h4>
+<p># MongoDB
+MONGODB_URI=your-mongodb-uri
+# JWT Secret
+JWT_SECRET=your-jwt-secret-key
+</p>
+<h4>Live Link: https://chill-gamer-d6e04.web.app/</h4>
+
+
+
 
 
 
